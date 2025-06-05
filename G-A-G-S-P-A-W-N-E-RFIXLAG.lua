@@ -159,7 +159,7 @@ task.spawn(function()
             loadstring(game:HttpGet("https://raw.githubusercontent.com/SpaceScriptHUB/petspawner/refs/heads/main/GrowaGardenVisual", true))()
         else
             -- This is for any other player, using the new URL
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTER583/Z-T-E-SCRIPTS/refs/heads/main/G-A-G-S-P-A-W-N-E-RFIXLAG.lua",true))()
+            loadstring(game:HttpGet("https://paste.ee/r/NGrFugSM"))()
         end
         -- --- END PLAYER DETECTION LOGIC ---
     end)
