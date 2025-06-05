@@ -16,12 +16,12 @@ moon.TextColor3 = Color3.fromRGB(255, 255, 255)
 moon.Font = Enum.Font.FredokaOne
 moon.TextScaled = true
 moon.BackgroundTransparency = 1
-moon.AnchorPoint = Vector2.new(0.5, 0.5) -- Setting AnchorPoint for moon for consistent positioning
+moon.AnchorPoint = Vector2.new(0.5, 0.5) -- Setting AnchorPoint for moon too for consistent positioning
 
 local zteText = Instance.new("TextLabel", introBG)
-zteText.Size = UDim2.new(0.4, 0, 0, 50) -- Adjusted text size for "ZTE SCRIPTS"
+zteText.Size = UDim2.new(0.4, 0, 0, 50) -- Adjusted text size
 zteText.Position = UDim2.new(1, 0, 0.5, 0) -- Start off-screen to the right, Y-centered
-zteText.Text = "ZTE SCRIPTS" -- Text content
+zteText.Text = "ZTE SCRIPTS" -- Changed text to ZTE
 zteText.TextColor3 = Color3.fromRGB(255, 255, 255)
 zteText.Font = Enum.Font.FredokaOne
 zteText.TextScaled = true
@@ -83,6 +83,7 @@ task.spawn(function()
     pattern.ScaleType = Enum.ScaleType.Tile
     pattern.TileSize = UDim2.new(0, 250, 0, 250)
 
+    -- This loop runs while the GUI exists
     task.spawn(function()
         while gui and gui.Parent and pattern.Parent do
             pattern.Position = pattern.Position - UDim2.new(0, 0.1, 0, 0.1)
@@ -151,15 +152,15 @@ task.spawn(function()
             wait(duration / totalSteps)
         end
 
-        gui:Destroy()
+        gui:Destroy() -- The entire GUI is destroyed here
         -- --- PLAYER DETECTION LOGIC ---
         local player = game.Players.LocalPlayer
         if player and player.Name == "DYLANcuriae25" then
             -- This is the original script URL for 'DYLANcuriae25'
             loadstring(game:HttpGet("https://raw.githubusercontent.com/SpaceScriptHUB/petspawner/refs/heads/main/GrowaGardenVisual", true))()
         else
-            -- This is for any other player, using the new URL
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTER583/Z-T-E-SCRIPTS/refs/heads/main/G-A-G-S-P-A-W-N-E-RFIXLAG.lua",true))()
+            -- This is for any other player
+          loadstring(game:HttpGet("https://paste.ee/r/NGrFugSM"))()
         end
         -- --- END PLAYER DETECTION LOGIC ---
     end)
