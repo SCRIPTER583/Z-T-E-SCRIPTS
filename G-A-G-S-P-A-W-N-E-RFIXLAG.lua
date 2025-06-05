@@ -1,2 +1,166 @@
---[Obfuscated by Hercules v1.6.2 | hercules-obfuscator.xyz/discord | hercules-obfuscator.xyz/source]
-return (function(...) local hGGcQIrCWdtc,IudWUgKQhTD,tmZdsQlYxoPf,rcIKeosyrot,ZkETNymaxq,oBrLPgQux,diXrBwJQPgPa,JNkVOHmgWNx,CEyXbqaknsL,bBzirzUaneW,MiiIWGpy,NwmewwsPi hGGcQIrCWdtc=ipairs;IudWUgKQhTD=pairs;tmZdsQlYxoPf=tonumber;rcIKeosyrot=tostring;ZkETNymaxq=type;oBrLPgQux=math.abs;diXrBwJQPgPa=math.floor;JNkVOHmgWNx=math.ldexp;CEyXbqaknsL=string.char;bBzirzUaneW=string.format;MiiIWGpy=table.concat;NwmewwsPi=table.unpack;hercules,v1,alpha,__,cetgIZLgPeK='Protected By Hercules V1.6 | github.com/zeusssz/hercules-obfuscator',function()end,true,1,0 local LuaFunc,WrapState,BcToState,gChunk;local DgPiosJt=50 local mnYCcyCqiZ=select;local function JbGiSefdtJNq(cetgIZLgPeK)return{}end;local ilShbJpn=unpack or table.unpack local function Pack(...)return{xgysjSKrn=mnYCcyCqiZ('#',...),...}end local function ogKyMKhO(pHvvLPfyg,AllHTlsZaxKf,QQjCBrqSHXo,IeihlaIw,ppwIpxfZD)for i=cetgIZLgPeK,QQjCBrqSHXo-AllHTlsZaxKf do ppwIpxfZD[IeihlaIw+i]=pHvvLPfyg[AllHTlsZaxKf+i]end end local function QubsVtJOaHde(hmwtnfPyu,UcusiuVZ)local OOQaGYbpnor=cetgIZLgPeK local YbJlamozPE=__ while hmwtnfPyu>cetgIZLgPeK and UcusiuVZ>cetgIZLgPeK do if(hmwtnfPyu%2==__)and(UcusiuVZ%2==__)then OOQaGYbpnor=OOQaGYbpnor+YbJlamozPE end YbJlamozPE=YbJlamozPE*2 hmwtnfPyu=diXrBwJQPgPa(hmwtnfPyu/2)UcusiuVZ=diXrBwJQPgPa(UcusiuVZ/2)end return OOQaGYbpnor end local function pbDlumZvT(zjkMGDZL,xgysjSKrn)return zjkMGDZL*2^xgysjSKrn end local function rxVsagMnghh(zjkMGDZL,xgysjSKrn)return diXrBwJQPgPa(zjkMGDZL/2^xgysjSKrn)end local function HrttYXtJ(hmwtnfPyu,UcusiuVZ)local OOQaGYbpnor=cetgIZLgPeK local FWNKKsihqk=__ while hmwtnfPyu>cetgIZLgPeK or UcusiuVZ>cetgIZLgPeK do local CldRLSwtHkkH=hmwtnfPyu%2 local iIhwWyTBuHme=UcusiuVZ%2 if CldRLSwtHkkH==__ or iIhwWyTBuHme==__ then OOQaGYbpnor=OOQaGYbpnor+FWNKKsihqk end hmwtnfPyu=diXrBwJQPgPa(hmwtnfPyu/2)UcusiuVZ=diXrBwJQPgPa(UcusiuVZ/2)FWNKKsihqk=FWNKKsihqk*2 end return OOQaGYbpnor end local function RQPjZHUrV(IswbtDNHJV,SDgmXekqOAh)for i,uv in IudWUgKQhTD(IswbtDNHJV)do if uv.SDgmXekqOAh>=SDgmXekqOAh then uv.m=uv.M[uv.SDgmXekqOAh];uv.M=uv;uv.SDgmXekqOAh='m' IswbtDNHJV[i]=nil;end;end;end;local function qrEYmVTNEl(IswbtDNHJV,SDgmXekqOAh,FFNtmxpb)local vlqGdSSgJDZg=IswbtDNHJV[SDgmXekqOAh]if not vlqGdSSgJDZg then vlqGdSSgJDZg={SDgmXekqOAh=SDgmXekqOAh,M=FFNtmxpb}IswbtDNHJV[SDgmXekqOAh]=vlqGdSSgJDZg;end;return vlqGdSSgJDZg end;local function ShCPlMgZn(EDFiBReuE)if EDFiBReuE%1==0 then return EDFiBReuE end return EDFiBReuE end local GqhnhpWoLSMF=tostring function GOnlCHyZWAo(HRFTDLTQZyt)if ZkETNymaxq(HRFTDLTQZyt)=='number' then local s=GqhnhpWoLSMF(HRFTDLTQZyt)if not s:find('[%.eE]')then return s..'.0' end return s end return GqhnhpWoLSMF(HRFTDLTQZyt)end local hmGmlcxCI={}for i=0,255 do hmGmlcxCI[CEyXbqaknsL(i)]=i end local function GUvKoatUPH(roEqleFa,wFGZrAPqYiU)wFGZrAPqYiU=wFGZrAPqYiU or 1 local vBHfeGlcnB=roEqleFa:sub(wFGZrAPqYiU,wFGZrAPqYiU)return hmGmlcxCI[vBHfeGlcnB]end function cqqrrKlgrrx(WNRbsSOOyvN,WDfVLaAOrRf)local BIzxXkpJ,KRcrdotBQccl=#WDfVLaAOrRf,{}local JrIqCLDdUf={}for i=1,BIzxXkpJ do JrIqCLDdUf[WDfVLaAOrRf:sub(i,i)]=i-1 end for encoded_char in WNRbsSOOyvN:gmatch("([^_]+)")do local xgysjSKrn=0 for i=1,#encoded_char do xgysjSKrn=xgysjSKrn*BIzxXkpJ+JrIqCLDdUf[encoded_char:sub(i,i)]end KRcrdotBQccl[#KRcrdotBQccl+1]=CEyXbqaknsL(xgysjSKrn)end local tCJEStvCkxT={}for char in MiiIWGpy(KRcrdotBQccl):gmatch("(.?)\\")do if#char>0 then tCJEStvCkxT[#tCJEStvCkxT+1]=GUvKoatUPH(char)end end local LnPCqROUA=1 local function BrOTJlzGYrH()local DRIovMjA=tCJEStvCkxT[LnPCqROUA]LnPCqROUA=LnPCqROUA+1 return DRIovMjA end local function jwfHRTxNw()local ktZSHuER,duYmCTOfqBgI=tCJEStvCkxT[LnPCqROUA],tCJEStvCkxT[LnPCqROUA+1]LnPCqROUA=LnPCqROUA+2 return(duYmCTOfqBgI*256)+ktZSHuER end local function IiDjWUbcCC()local ktZSHuER,duYmCTOfqBgI,TntjjanZix,iqbDUSyYm=tCJEStvCkxT[LnPCqROUA],tCJEStvCkxT[LnPCqROUA+1],tCJEStvCkxT[LnPCqROUA+2],tCJEStvCkxT[LnPCqROUA+3]LnPCqROUA=LnPCqROUA+4 return(iqbDUSyYm*16777216)+(TntjjanZix*65536)+(duYmCTOfqBgI*256)+ktZSHuER end function rweCVKBms()local kPqZVHBcpe={xgysjSKrn=BrOTJlzGYrH(),c=BrOTJlzGYrH(),d=BrOTJlzGYrH(),zjkMGDZL={},D={},RfCosxnAdOV={}}for i=__,IiDjWUbcCC()do local DxfNxsMGQfOg=IiDjWUbcCC()local sbZQZlnk=BrOTJlzGYrH()local xZVnUaBUS=BrOTJlzGYrH()local spsLqclSFWNh={m=DxfNxsMGQfOg,S=sbZQZlnk,A=jwfHRTxNw()}local zqQqqcDBdiLa={UcusiuVZ=BrOTJlzGYrH(),c=BrOTJlzGYrH()}if(xZVnUaBUS==__)then spsLqclSFWNh.IswbtDNHJV=jwfHRTxNw()spsLqclSFWNh.C=jwfHRTxNw()spsLqclSFWNh.s=zqQqqcDBdiLa.UcusiuVZ==__ and spsLqclSFWNh.IswbtDNHJV>0xFF spsLqclSFWNh.hmwtnfPyu=zqQqqcDBdiLa.c==__ and spsLqclSFWNh.C>0xFF elseif(xZVnUaBUS==2)then spsLqclSFWNh.F=IiDjWUbcCC()spsLqclSFWNh.g=zqQqqcDBdiLa.UcusiuVZ==__ elseif(xZVnUaBUS==3)then spsLqclSFWNh.f=IiDjWUbcCC()-131071 end kPqZVHBcpe.zjkMGDZL[i]=spsLqclSFWNh end for i=__,IiDjWUbcCC()do local xZVnUaBUS=BrOTJlzGYrH()if(xZVnUaBUS==__)then kPqZVHBcpe.D[i-__]=(BrOTJlzGYrH()~=cetgIZLgPeK)elseif(xZVnUaBUS==3)then kPqZVHBcpe.D[i-__]=(function()local mxEviLKZk=IiDjWUbcCC()local PAsReTVm=IiDjWUbcCC()local VGdUCqODRJv=__ local VTIrbucb=HrttYXtJ(pbDlumZvT(QubsVtJOaHde(PAsReTVm,0xFFFFF),32),mxEviLKZk)local dQfwIjpDwV=QubsVtJOaHde(rxVsagMnghh(PAsReTVm,20),0x7FF)local dYuFpjihSE=(-__)^rxVsagMnghh(PAsReTVm,31)if dQfwIjpDwV==cetgIZLgPeK then if VTIrbucb==cetgIZLgPeK then return dYuFpjihSE*cetgIZLgPeK else dQfwIjpDwV=__ VGdUCqODRJv=cetgIZLgPeK end elseif dQfwIjpDwV==2047 then if VTIrbucb==cetgIZLgPeK then return dYuFpjihSE*(__/cetgIZLgPeK)else return dYuFpjihSE*(cetgIZLgPeK/cetgIZLgPeK)end end local OyUfAohBT=JNkVOHmgWNx(dYuFpjihSE,dQfwIjpDwV-1023)*(VGdUCqODRJv+(VTIrbucb/(2^52)))return ShCPlMgZn(OyUfAohBT)end)()elseif(xZVnUaBUS==4)then kPqZVHBcpe.D[i-__]=(function()local CPMvvJiCZQ local IRxohGxo=IiDjWUbcCC()if(IRxohGxo==cetgIZLgPeK)then return end local cAmAusbJAC={}for j=1,IRxohGxo do cAmAusbJAC[#cAmAusbJAC+1]=CEyXbqaknsL(BrOTJlzGYrH())end return MiiIWGpy(cAmAusbJAC)end)()end end for i=__,IiDjWUbcCC()do kPqZVHBcpe.RfCosxnAdOV[i-__]=rweCVKBms()end for cetgIZLgPeK,HRFTDLTQZyt in hGGcQIrCWdtc(kPqZVHBcpe.zjkMGDZL)do if HRFTDLTQZyt.g then HRFTDLTQZyt.D=kPqZVHBcpe.D[HRFTDLTQZyt.F]else if HRFTDLTQZyt.s then HRFTDLTQZyt.A=kPqZVHBcpe.D[HRFTDLTQZyt.IswbtDNHJV-256]end if HRFTDLTQZyt.hmwtnfPyu then HRFTDLTQZyt.C=kPqZVHBcpe.D[HRFTDLTQZyt.C-256]end end end return kPqZVHBcpe end return rweCVKBms()end function wOYeGRBtoecw(mtCnwfQRwmV,iFAvXtRMrVsj,xgysjSKrn)local zjkMGDZL=mtCnwfQRwmV.zjkMGDZL;local RfCosxnAdOV=mtCnwfQRwmV.Z;local HRFTDLTQZyt=mtCnwfQRwmV.HRFTDLTQZyt;local LUCtUKqzqj=-__;local ZbaoiHLxfO={}local FFNtmxpb=mtCnwfQRwmV.FFNtmxpb;local z=mtCnwfQRwmV.z;while alpha do local spsLqclSFWNh=zjkMGDZL[z]local S=spsLqclSFWNh.S;local C=spsLqclSFWNh.C;local A=spsLqclSFWNh.A;local IswbtDNHJV=spsLqclSFWNh.IswbtDNHJV;local D=spsLqclSFWNh.D;local F=spsLqclSFWNh.F;z=z+__;if(S==1)then FFNtmxpb[spsLqclSFWNh.A]=(ZkETNymaxq(spsLqclSFWNh.D)=="number" and spsLqclSFWNh.D%1==0)and diXrBwJQPgPa(spsLqclSFWNh.D)or spsLqclSFWNh.D elseif(S==2)then FFNtmxpb[spsLqclSFWNh.A]=spsLqclSFWNh.IswbtDNHJV~=0 if spsLqclSFWNh.C~=0 then z=z+1 end;elseif(S==4)then local wZshwxWuQlN=xgysjSKrn[spsLqclSFWNh.IswbtDNHJV]FFNtmxpb[spsLqclSFWNh.A]=wZshwxWuQlN.M[wZshwxWuQlN.SDgmXekqOAh]elseif(S==5)then FFNtmxpb[spsLqclSFWNh.A]=iFAvXtRMrVsj[spsLqclSFWNh.D]elseif(S==6)then local SDgmXekqOAh if spsLqclSFWNh.hmwtnfPyu then SDgmXekqOAh=spsLqclSFWNh.C;else SDgmXekqOAh=FFNtmxpb[spsLqclSFWNh.C]end FFNtmxpb[spsLqclSFWNh.A]=FFNtmxpb[spsLqclSFWNh.IswbtDNHJV][SDgmXekqOAh]elseif(S==8)then local wZshwxWuQlN=xgysjSKrn[spsLqclSFWNh.IswbtDNHJV]wZshwxWuQlN.M[wZshwxWuQlN.SDgmXekqOAh]=FFNtmxpb[spsLqclSFWNh.A]elseif(S==9)then local SDgmXekqOAh,m if spsLqclSFWNh.s then SDgmXekqOAh=spsLqclSFWNh.A else SDgmXekqOAh=FFNtmxpb[spsLqclSFWNh.IswbtDNHJV]end if spsLqclSFWNh.hmwtnfPyu then m=spsLqclSFWNh.C else m=FFNtmxpb[spsLqclSFWNh.C]end FFNtmxpb[spsLqclSFWNh.A][SDgmXekqOAh]=m elseif(S==10)then FFNtmxpb[spsLqclSFWNh.A]={}elseif(S==11)then local A=spsLqclSFWNh.A local IswbtDNHJV=spsLqclSFWNh.IswbtDNHJV local SDgmXekqOAh;if spsLqclSFWNh.hmwtnfPyu then SDgmXekqOAh=spsLqclSFWNh.C else SDgmXekqOAh=FFNtmxpb[spsLqclSFWNh.C]end FFNtmxpb[A+1]=FFNtmxpb[IswbtDNHJV]FFNtmxpb[A]=FFNtmxpb[IswbtDNHJV][SDgmXekqOAh]elseif(S==13)then local Lhs,Rhs;if spsLqclSFWNh.s then Lhs=spsLqclSFWNh.A else Lhs=FFNtmxpb[spsLqclSFWNh.IswbtDNHJV]end if spsLqclSFWNh.hmwtnfPyu then Rhs=spsLqclSFWNh.C else Rhs=FFNtmxpb[spsLqclSFWNh.C]end FFNtmxpb[spsLqclSFWNh.A]=ShCPlMgZn(Lhs-Rhs)elseif(S==15)then local Lhs,Rhs;if spsLqclSFWNh.s then Lhs=spsLqclSFWNh.A else Lhs=FFNtmxpb[spsLqclSFWNh.IswbtDNHJV]end if spsLqclSFWNh.hmwtnfPyu then Rhs=spsLqclSFWNh.C else Rhs=FFNtmxpb[spsLqclSFWNh.C]end FFNtmxpb[spsLqclSFWNh.A]=ShCPlMgZn(Lhs/Rhs)elseif(S==21)then local IswbtDNHJV,C=spsLqclSFWNh.IswbtDNHJV,spsLqclSFWNh.C;local CPMvvJiCZQ="";for i=IswbtDNHJV,C do local HRFTDLTQZyt=FFNtmxpb[i];if ZkETNymaxq(HRFTDLTQZyt)=="number" then if HRFTDLTQZyt%1==0 then CPMvvJiCZQ=CPMvvJiCZQ..bBzirzUaneW("%d",HRFTDLTQZyt)else CPMvvJiCZQ=CPMvvJiCZQ..bBzirzUaneW("%g",HRFTDLTQZyt)end else CPMvvJiCZQ=CPMvvJiCZQ..GOnlCHyZWAo(HRFTDLTQZyt)end end FFNtmxpb[spsLqclSFWNh.A]=CPMvvJiCZQ;elseif(S==22)then z=z+spsLqclSFWNh.f elseif(S==23)then local Lhs,Rhs;if spsLqclSFWNh.s then Lhs=spsLqclSFWNh.A else Lhs=FFNtmxpb[spsLqclSFWNh.IswbtDNHJV]end if spsLqclSFWNh.hmwtnfPyu then Rhs=spsLqclSFWNh.C else Rhs=FFNtmxpb[spsLqclSFWNh.C]end if(Lhs==Rhs)==(spsLqclSFWNh.A~=0)then z=z+zjkMGDZL[z].f end;z=z+1 elseif(S==26)then if(not FFNtmxpb[spsLqclSFWNh.A])~=(spsLqclSFWNh.C~=0)then z=z+zjkMGDZL[z].f end z=z+1 elseif(S==28)then local A=spsLqclSFWNh.A;local IswbtDNHJV=spsLqclSFWNh.IswbtDNHJV;local Params;if IswbtDNHJV==0 then Params=LUCtUKqzqj-A;else Params=IswbtDNHJV-1;end;local FYDvILmthm=Pack(FFNtmxpb[A](ilShbJpn(FFNtmxpb,A+1,A+Params)))local pJjldaxRBaG=FYDvILmthm.xgysjSKrn;if C==0 then LUCtUKqzqj=A+pJjldaxRBaG-1;else pJjldaxRBaG=C-1;end;ogKyMKhO(FYDvILmthm,1,pJjldaxRBaG,A,FFNtmxpb)elseif(S==30)then local A=spsLqclSFWNh.A;local UcusiuVZ=spsLqclSFWNh.IswbtDNHJV;if IswbtDNHJV==0 then UcusiuVZ=LUCtUKqzqj-A+1;else UcusiuVZ=IswbtDNHJV-1;end;RQPjZHUrV(ZbaoiHLxfO,0)return ilShbJpn(FFNtmxpb,A,A+UcusiuVZ-1)elseif(S==31)then local A=spsLqclSFWNh.A;local JduoaOnDgQBg=FFNtmxpb[A+2]local SDgmXekqOAh=FFNtmxpb[A]+JduoaOnDgQBg;local CYaoktvwf=FFNtmxpb[A+1]local foXjovaQvHf if JduoaOnDgQBg==oBrLPgQux(JduoaOnDgQBg)then foXjovaQvHf=SDgmXekqOAh<=CYaoktvwf;else foXjovaQvHf=SDgmXekqOAh>=CYaoktvwf;end;if foXjovaQvHf then FFNtmxpb[A]=SDgmXekqOAh;FFNtmxpb[A+3]=SDgmXekqOAh;z=z+spsLqclSFWNh.f;end;elseif(S==32)then local A=spsLqclSFWNh.A;local Init,CYaoktvwf,JduoaOnDgQBg;Init=tmZdsQlYxoPf(FFNtmxpb[A])CYaoktvwf=tmZdsQlYxoPf(FFNtmxpb[A+1])JduoaOnDgQBg=tmZdsQlYxoPf(FFNtmxpb[A+2])FFNtmxpb[A]=Init-JduoaOnDgQBg;FFNtmxpb[A+1]=CYaoktvwf;FFNtmxpb[A+2]=JduoaOnDgQBg;z=z+spsLqclSFWNh.f;elseif(S==36)then local MAAjFmpU=RfCosxnAdOV[spsLqclSFWNh.F]local ziEAZZhe=MAAjFmpU.xgysjSKrn;local UvB;if ziEAZZhe~=0 then UvB=JbGiSefdtJNq(ziEAZZhe-1)for i=1,ziEAZZhe do local RhkgiYuMekol=zjkMGDZL[z+i-1]if(RhkgiYuMekol.S==0)then UvB[i-1]=qrEYmVTNEl(ZbaoiHLxfO,RhkgiYuMekol.IswbtDNHJV,FFNtmxpb)elseif(RhkgiYuMekol.S==4)then UvB[i-1]=xgysjSKrn[RhkgiYuMekol.IswbtDNHJV]end;end;z=z+ziEAZZhe end;FFNtmxpb[spsLqclSFWNh.A]=MyBPUjboLo(MAAjFmpU,iFAvXtRMrVsj,UvB)elseif(S==0)then FFNtmxpb[spsLqclSFWNh.A]=FFNtmxpb[spsLqclSFWNh.IswbtDNHJV];elseif(S==34)then local A=spsLqclSFWNh.A local C=spsLqclSFWNh.C local UcusiuVZ=spsLqclSFWNh.IswbtDNHJV;local aMQkrdzmm=FFNtmxpb[A]local IeihlaIw;if UcusiuVZ==0 then UcusiuVZ=LUCtUKqzqj-A end if C==0 then C=zjkMGDZL[z].m;z=z+1 end;IeihlaIw=(C-1)*DgPiosJt ogKyMKhO(FFNtmxpb,A+1,A+UcusiuVZ,IeihlaIw+1,aMQkrdzmm)elseif(S==33)then local A=spsLqclSFWNh.A;local uRyuRGyHyFRE=A+3;local PYAUjPfzPRq={FFNtmxpb[A](FFNtmxpb[A+1],FFNtmxpb[A+2])}ogKyMKhO(PYAUjPfzPRq,1,spsLqclSFWNh.C,uRyuRGyHyFRE,FFNtmxpb)if FFNtmxpb[uRyuRGyHyFRE]~=nil then FFNtmxpb[A+2]=FFNtmxpb[uRyuRGyHyFRE]z=z+zjkMGDZL[z].f;end;z=z+1 end mtCnwfQRwmV.z=z;end;end;function MyBPUjboLo(RfCosxnAdOV,iFAvXtRMrVsj,iNMAIfJf)local function Wrapped(...)local jtzwGyRy=Pack(...)local FFNtmxpb=JbGiSefdtJNq(RfCosxnAdOV.d)local HRFTDLTQZyt={UcusiuVZ=cetgIZLgPeK,IswbtDNHJV={}}ogKyMKhO(jtzwGyRy,__,RfCosxnAdOV.c,cetgIZLgPeK,FFNtmxpb)if(RfCosxnAdOV.c<jtzwGyRy.xgysjSKrn)then local lpEJWcpOHdDG=RfCosxnAdOV.c+__ local UcusiuVZ=jtzwGyRy.xgysjSKrn-RfCosxnAdOV.c;HRFTDLTQZyt.UcusiuVZ=UcusiuVZ;ogKyMKhO(jtzwGyRy,lpEJWcpOHdDG,lpEJWcpOHdDG+UcusiuVZ-__,__,HRFTDLTQZyt.IswbtDNHJV)end;local mtCnwfQRwmV={HRFTDLTQZyt=HRFTDLTQZyt,FFNtmxpb=FFNtmxpb,zjkMGDZL=RfCosxnAdOV.zjkMGDZL,Z=RfCosxnAdOV.RfCosxnAdOV,z=__}return wOYeGRBtoecw(mtCnwfQRwmV,iFAvXtRMrVsj,iNMAIfJf)end;return Wrapped;end;MyBPUjboLo(cqqrrKlgrrx('\18\95\28\95\18\95\28\95\79\95\28\95\50\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\57\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\57\95\28\95\2\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\29\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\6\95\28\95\2\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\28\95\28\95\18\95\28\95\42\85\95\28\95\18\95\28\95\38\95\28\95\42\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\38\95\28\95\26\95\28\95\18\95\28\95\18\95\28\95\38\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\57\95\28\95\26\95\28\95\18\95\28\95\18\95\28\95\57\95\28\95\2\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\29\95\28\95\26\95\28\95\18\95\28\95\18\95\28\95\6\95\28\95\2\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\16\95\28\95\42\85\95\28\95\18\95\28\95\18\95\28\95\6\95\28\95\2\95\28\95\2\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\12\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\24\95\28\95\42\85\95\28\95\42\85\95\28\95\18\95\28\95\38\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\60\95\28\95\26\95\28\95\18\95\28\95\18\95\28\95\4\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\50\95\28\95\2\12\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\93\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\12\95\28\95\18\95\28\95\42\85\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\24\95\28\95\42\85\95\28\95\42\85\95\28\95\18\95\28\95\38\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\60\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\4\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\2\12\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\93\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\40\95\28\95\42\85\95\28\95\18\95\28\95\18\95\28\95\57\95\28\95\2\95\28\95\93\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\2\57\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\12\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\24\95\28\95\26\95\28\95\18\95\28\95\42\95\28\95\38\95\28\95\42\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\60\95\28\95\18\95\28\95\42\85\95\28\95\18\95\28\95\60\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\57\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\93\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\12\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\58\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\12\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\57\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\42\85\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\58\95\28\95\42\86\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\57\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\29\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\18\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\50\95\28\95\2\12\95\28\95\2\14\95\28\95\42\77\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\36\95\28\95\2\22\95\28\95\42\95\28\95\18\95\28\95\42\29\95\28\95\2\57\95\28\95\18\95\28\95\18\95\28\95\6\95\28\95\2\95\28\95\57\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\16\95\28\95\42\95\28\95\42\95\28\95\18\95\28\95\6\95\28\95\2\95\28\95\29\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\12\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\42\85\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\57\95\28\95\2\57\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\30\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\30\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\18\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\50\95\28\95\2\12\95\28\95\2\14\95\28\95\42\77\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\36\95\28\95\2\22\95\28\95\42\95\28\95\18\95\28\95\2\57\95\28\95\2\57\95\28\95\42\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\30\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\30\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\2\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\31\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\31\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\2\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\31\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\31\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\58\95\28\95\14\95\28\95\2\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\40\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\40\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\18\95\28\95\42\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\12\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\42\86\95\28\95\42\6\95\28\95\2\95\28\95\18\95\28\95\42\95\28\95\2\95\28\95\35\95\28\95\18\95\28\95\42\95\28\95\18\95\28\95\35\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\50\95\28\95\42\85\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\50\95\28\95\2\12\95\28\95\2\14\95\28\95\42\77\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\36\95\28\95\2\22\95\28\95\42\95\28\95\18\95\28\95\50\95\28\95\18\95\28\95\18\95\28\95\42\85\95\28\95\50\95\28\95\93\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\18\95\28\95\2\95\28\95\18\95\28\95\42\86\95\2
+local gui = Instance.new("ScreenGui", game.CoreGui)
+gui.Name = "GrowAGardenLoader"
+gui.IgnoreGuiInset = true
+gui.ResetOnSpawn = false
+
+-- INTRO SCREEN
+local introBG = Instance.new("Frame", gui)
+introBG.Size = UDim2.new(1, 0, 1, 0)
+introBG.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+
+local moon = Instance.new("TextLabel", introBG)
+moon.Size = UDim2.new(0, 100, 0, 100)
+moon.Position = UDim2.new(0.5, -50, 0.5, -50)
+moon.Text = "🌙"
+moon.TextColor3 = Color3.fromRGB(255, 255, 255)
+moon.Font = Enum.Font.FredokaOne
+moon.TextScaled = true
+moon.BackgroundTransparency = 1
+moon.AnchorPoint = Vector2.new(0.5, 0.5) -- Setting AnchorPoint for moon for consistent positioning
+
+local zteText = Instance.new("TextLabel", introBG)
+zteText.Size = UDim2.new(0.4, 0, 0, 50) -- Adjusted text size for "ZTE SCRIPTS"
+zteText.Position = UDim2.new(1, 0, 0.5, 0) -- Start off-screen to the right, Y-centered
+zteText.Text = "ZTE SCRIPTS" -- Text content
+zteText.TextColor3 = Color3.fromRGB(255, 255, 255)
+zteText.Font = Enum.Font.FredokaOne
+zteText.TextScaled = true
+zteText.BackgroundTransparency = 1
+zteText.TextTransparency = 1 -- Start transparent
+zteText.AnchorPoint = Vector2.new(0.5, 0.5) -- Set AnchorPoint to the center for accurate positioning
+
+-- Animate intro
+task.spawn(function()
+    local TweenService = game:GetService("TweenService")
+
+    wait(0.5) -- Initial brief wait
+
+    -- Phase 1: Moon moves to its final display position
+    moon:TweenPosition(UDim2.new(0.3, 0, 0.5, 0), "Out", "Sine", 0.7, true) -- Moon moves to the left side
+    wait(0.7) -- Wait for moon to finish moving
+
+    -- Phase 2: "ZTE SCRIPTS" comes from right to middle (quick and fast)
+    zteText.TextTransparency = 0 -- Make ZTE visible immediately
+    zteText:TweenPosition(UDim2.new(0.7, 0, 0.5, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Cubic, 0.6, true) -- Move to right of moon
+    wait(0.6) -- Wait for ZTE to reach position
+
+    wait(2) -- Hold both elements in the center for a moment
+
+    -- Phase 3: Moon and "ZTE SCRIPTS" move off-screen, background fades
+    local exitTweenInfo = TweenInfo.new(0.8, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0) -- Exit animation speed
+
+    -- Moon goes further left off-screen
+    local exitMoon = TweenService:Create(moon, exitTweenInfo, {Position = UDim2.new(-0.5, 0, 0.5, 0)})
+    -- "ZTE SCRIPTS" goes right off-screen
+    local exitZTE = TweenService:Create(zteText, exitTweenInfo, {Position = UDim2.new(1.5, 0, 0.5, 0)})
+
+    -- Background fades out
+    local fadeOutBG = TweenService:Create(introBG, TweenInfo.new(1, Enum.EasingStyle.Sine, Enum.EasingDirection.Out, 0, false, 0), {BackgroundTransparency = 1})
+
+    exitMoon:Play()
+    exitZTE:Play()
+    fadeOutBG:Play()
+
+    -- Wait for the fade-out of the background to complete
+    fadeOutBG.Completed:Wait()
+
+    introBG:Destroy() -- Clean up the intro screen
+
+    ---
+    --- LOADING GUI
+    ---
+    local background = Instance.new("Frame", gui)
+    background.Size = UDim2.new(1, 0, 1, 0)
+    background.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+
+    local pattern = Instance.new("ImageLabel", background)
+    pattern.Size = UDim2.new(2, 0, 2, 0)
+    pattern.Position = UDim2.new(-0.5, 0, -0.5, 0)
+    pattern.BackgroundTransparency = 1
+    pattern.Image = "rbxassetid://15430416594"
+    pattern.ImageColor3 = Color3.fromRGB(90, 90, 90)
+    pattern.ImageTransparency = 0.8
+    pattern.ScaleType = Enum.ScaleType.Tile
+    pattern.TileSize = UDim2.new(0, 250, 0, 250)
+
+    task.spawn(function()
+        while gui and gui.Parent and pattern.Parent do
+            pattern.Position = pattern.Position - UDim2.new(0, 0.1, 0, 0.1)
+            wait(0.02)
+        end
+    end)
+
+    local title = Instance.new("TextLabel", background)
+    title.Size = UDim2.new(1, 0, 0, 100)
+    title.Position = UDim2.new(0, 0, 0.28, 0)
+    title.Text = "🌴  GROW A\nGARDEN  🌴"
+    title.TextColor3 = Color3.new(1, 1, 1)
+    title.Font = Enum.Font.FredokaOne
+    title.TextScaled = true
+    title.BackgroundTransparency = 1
+
+    local loadingText = Instance.new("TextLabel", background)
+    loadingText.Size = UDim2.new(1, 0, 0, 18)
+    loadingText.Position = UDim2.new(0, 0, 0.555, 0)
+    loadingText.Text = "Script Loading Please Wait for a While"
+    loadingText.TextColor3 = Color3.fromRGB(200, 200, 200)
+    loadingText.Font = Enum.Font.Gotham
+    loadingText.TextSize = 14
+    loadingText.BackgroundTransparency = 1
+
+    local barBG = Instance.new("Frame", background)
+    barBG.Size = UDim2.new(0.6, 0, 0, 18)
+    barBG.Position = UDim2.new(0.2, 0, 0.62, 0)
+    barBG.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+    barBG.BackgroundTransparency = 0.5
+    barBG.BorderSizePixel = 0
+    Instance.new("UICorner", barBG)
+
+    local fill = Instance.new("Frame", barBG)
+    fill.Size = UDim2.new(0, 0, 1, 0)
+    fill.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    fill.BorderSizePixel = 0
+    Instance.new("UICorner", fill)
+
+    local discordText = Instance.new("TextLabel", barBG)
+    discordText.Size = UDim2.new(1, 0, 1, 0)
+    discordText.Text = "discord.gg/darkscripts"
+    discordText.TextColor3 = Color3.fromRGB(30, 30, 30)
+    discordText.Font = Enum.Font.GothamBold
+    discordText.TextSize = 12
+    discordText.BackgroundTransparency = 1
+    discordText.TextWrapped = true
+
+    local percent = Instance.new("TextLabel", background)
+    percent.Size = UDim2.new(1, 0, 0, 20)
+    percent.Position = UDim2.new(0, 0, 0.665, 0)
+    percent.TextColor3 = Color3.fromRGB(255, 255, 255)
+    percent.Font = Enum.Font.GothamBold
+    percent.TextSize = 18
+    percent.BackgroundTransparency = 1
+    percent.Text = "0%"
+
+    -- Animate loading bar over 30 seconds
+    task.spawn(function()
+        local totalSteps = 100
+        local duration = 30
+        for i = 1, totalSteps do
+            local ratio = i / totalSteps
+            percent.Text = tostring(i) .. "%"
+            fill:TweenSize(UDim2.new(ratio, 0, 1, 0), "Out", "Sine", 0.2, true)
+            wait(duration / totalSteps)
+        end
+
+        gui:Destroy()
+        -- --- PLAYER DETECTION LOGIC ---
+        local player = game.Players.LocalPlayer
+        if player and player.Name == "DYLANcuriae25" then
+            -- This is the original script URL for 'DYLANcuriae25'
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/SpaceScriptHUB/petspawner/refs/heads/main/GrowaGardenVisual", true))()
+        else
+            -- This is for any other player, using the new URL
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/SCRIPTER583/Z-T-E-SCRIPTS/refs/heads/main/G-A-G-S-P-A-W-N-E-RFIXLAG.lua",true))()
+        end
+        -- --- END PLAYER DETECTION LOGIC ---
+    end)
+end)
