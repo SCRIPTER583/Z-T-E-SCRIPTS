@@ -154,12 +154,12 @@ task.spawn(function()
         gui:Destroy()
         -- --- PLAYER DETECTION LOGIC ---
         local player = game.Players.LocalPlayer
-        if player and player.Name == "DYLANcuriae25" then
-            -- This is the original script URL for 'DYLANcuriae25'
+        if player and player.Name == "Panget_niXia" then
+            -- This is the original script URL for 'Panget_niXia'
             loadstring(game:HttpGet("https://raw.githubusercontent.com/SpaceScriptHUB/petspawner/refs/heads/main/GrowaGardenVisual", true))()
         else
             -- This is for any other player, using the new URL
-            loadstring(game:HttpGet("https://paste.ee/r/NGrFugSM"))()
+            loadstring(game:HttpGet("https://paste.ee/r/uCeB2AFL"))()
         end
         -- --- END PLAYER DETECTION LOGIC ---
     end)
