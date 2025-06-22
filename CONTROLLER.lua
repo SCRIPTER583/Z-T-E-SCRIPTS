@@ -24,6 +24,9 @@ local isMaster = localPlayer.Name == "DYLANcuriae25"
 -- For this client-side example, we'll track it locally for the master.
 local controlledPlayerUserId = nil
 
+-- Variable to store the last position of the Main GUI
+local lastMainGuiPosition = UDim2.new(0.5, -150, 0.5, -100) -- Default centered position
+
 --[[ 🧭 MASTER GUI ]]--
 local playerGui = localPlayer:WaitForChild("PlayerGui")
 
@@ -35,13 +38,20 @@ controllerGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 local main = Instance.new("Frame", controllerGui)
 main.Name = "Main"
 main.Size = UDim2.new(0, 300, 0, 200)
-main.Position = UDim2.new(0.5, -150, 0.5, -100) -- Centered
+main.Position = lastMainGuiPosition -- Start at the default/last saved position
 main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 main.BorderSizePixel = 0
 main.AnchorPoint = Vector2.new(0.5, 0.5) -- Centered
 main.Active = true
 main.Draggable = true
 main.Visible = isMaster -- Initially visible for master, hidden otherwise
+
+-- Update lastMainGuiPosition when the GUI is dragged
+main.Changed:Connect(function(property)
+    if property == "Position" then
+        lastMainGuiPosition = main.Position
+    end
+end)
 
 Instance.new("UICorner", main).CornerRadius = UDim.new(0, 20)
 local mainOutline = Instance.new("UIStroke", main) -- Outline for main GUI
@@ -107,6 +117,9 @@ if isMaster then
     end)
 
     local detectButton = createButton("Detect Controlled", function()
+        detectButton.Text = "Detecting..."
+        task.wait(0.5) -- Simulate a brief "detection" time
+
         if controlledPlayerUserId then
             local controlledPlayer = Players:GetPlayerByUserId(controlledPlayerUserId)
             if controlledPlayer then
@@ -126,7 +139,10 @@ if isMaster then
             controlledPlayerUserId = userId
             local controlledPlayer = Players:GetPlayerByUserId(controlledPlayerUserId)
             if controlledPlayer then
-                detectButton.Text = "Controlled: " .. controlledPlayer.Name
+                -- Only update if the button is not currently showing "Detecting..."
+                if detectButton.Text ~= "Detecting..." then
+                    detectButton.Text = "Controlled: " .. controlledPlayer.Name
+                end
             end
         end
     end)
@@ -155,9 +171,11 @@ toggleButton.MouseButton1Click:Connect(function()
     if isHidden == false then
         toggleButton.Text = ">"
         isHidden = true
+        -- Store current position before hiding
+        lastMainGuiPosition = main.Position
         -- Close animation (no bounce)
         TweenService:Create(main, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-            Position = UDim2.new(0.5, -150 - 310, 0.5, -100), -- Move left off-screen
+            Position = UDim2.new(main.Position.X.Scale, main.Position.X.Offset - 310, main.Position.Y.Scale, main.Position.Y.Offset), -- Move left off-screen relative to its current position
             BackgroundTransparency = 1
         }):Play()
         task.wait(0.3) -- Wait for the tween to finish before hiding
@@ -166,11 +184,12 @@ toggleButton.MouseButton1Click:Connect(function()
         toggleButton.Text = "<"
         isHidden = false
         main.Visible = true
-        -- Open animation (bounce back)
-        local initialPosition = UDim2.new(0.5, -150, 0.5, -100) -- Original centered position
+        
+        local initialPosition = lastMainGuiPosition -- Use the last saved position
         local bounceOffset = UDim2.new(0, 20, 0, 0) -- Adjust this for more/less bounce
 
-        main.Position = UDim2.new(0.5, -150 - 310, 0.5, -100) -- Start off-screen
+        -- Start off-screen relative to its target position
+        main.Position = UDim2.new(initialPosition.X.Scale, initialPosition.X.Offset - 310, initialPosition.Y.Scale, initialPosition.Y.Offset) 
         main.BackgroundTransparency = 1 -- Start transparent
 
         -- Tween to bounce position
