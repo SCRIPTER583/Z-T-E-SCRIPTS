@@ -1,6 +1,7 @@
 --[[ 🛠 SETUP ]]--
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local TweenService = game:GetService("TweenService")
 
 -- Create RemoteEvent
 local remote = ReplicatedStorage:FindFirstChild("ArcControlEvent")
@@ -11,27 +12,28 @@ end
 
 local localPlayer = Players.LocalPlayer
 local character = localPlayer.Character or localPlayer.CharacterAdded:Wait()
-local isMaster = localPlayer.Name == "DYLANcuriae25" -- << MASTER USERNAME
+local isMaster = localPlayer.Name == "DYLANcuriae25"
 
---[[ 🧭 GUI - MASTER SIDE ]]--
+--[[ 🧭 MASTER GUI ]]--
 local playerGui = localPlayer:WaitForChild("PlayerGui")
 
 local controllerGui = Instance.new("ScreenGui", playerGui)
 controllerGui.Name = "ArcController"
 controllerGui.ResetOnSpawn = false
+controllerGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 
 local main = Instance.new("Frame", controllerGui)
 main.Name = "Main"
 main.Size = UDim2.new(0, 300, 0, 200)
-main.Position = UDim2.new(0.5, -150, 0.4, 0)
+main.Position = UDim2.new(0, 50, 0.3, 0)
 main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 main.BorderSizePixel = 0
-main.AnchorPoint = Vector2.new(0.5, 0.5)
+main.AnchorPoint = Vector2.new(0, 0.5)
 main.Active = true
 main.Draggable = true
+main.Visible = isMaster
 
-local corner = Instance.new("UICorner", main)
-corner.CornerRadius = UDim.new(0, 20)
+Instance.new("UICorner", main).CornerRadius = UDim.new(0, 20)
 
 local title = Instance.new("TextLabel", main)
 title.Text = "Arc Controller"
@@ -49,8 +51,7 @@ scroll.ScrollBarThickness = 4
 scroll.BackgroundTransparency = 1
 scroll.BorderSizePixel = 0
 
-local list = Instance.new("UIListLayout", scroll)
-list.Padding = UDim.new(0, 5)
+Instance.new("UIListLayout", scroll).Padding = UDim.new(0, 5)
 
 local function createButton(text, callback)
 	local btn = Instance.new("TextButton", scroll)
@@ -61,10 +62,7 @@ local function createButton(text, callback)
 	btn.Font = Enum.Font.Gotham
 	btn.TextSize = 16
 	btn.AutoButtonColor = true
-
-	local btnCorner = Instance.new("UICorner", btn)
-	btnCorner.CornerRadius = UDim.new(0, 10)
-
+	Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 10)
 	btn.MouseButton1Click:Connect(callback)
 end
 
@@ -78,6 +76,41 @@ if isMaster then
 	end)
 end
 
+-- Toggle Button
+local toggleButton = Instance.new("TextButton", controllerGui)
+toggleButton.Text = "<"
+toggleButton.Size = UDim2.new(0, 30, 0, 60)
+toggleButton.Position = UDim2.new(0, 0, 0.5, -30)
+toggleButton.AnchorPoint = Vector2.new(0, 0.5)
+toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+toggleButton.TextColor3 = Color3.new(1, 1, 1)
+toggleButton.Font = Enum.Font.GothamBlack
+toggleButton.TextSize = 20
+toggleButton.Visible = isMaster
+Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
+
+local isHidden = false
+
+toggleButton.MouseButton1Click:Connect(function()
+	if isHidden == false then
+		toggleButton.Text = ">"
+		isHidden = true
+		TweenService:Create(main, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Position = UDim2.new(0, -310, 0.3, 0),
+			Transparency = 1
+		}):Play()
+		main.Visible = false
+	else
+		toggleButton.Text = "<"
+		isHidden = false
+		main.Visible = true
+		TweenService:Create(main, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
+			Position = UDim2.new(0, 50, 0.3, 0),
+			Transparency = 0
+		}):Play()
+	end
+end)
+
 --[[ 👤 FOLLOWER SIDE ]]--
 remote.OnClientEvent:Connect(function(command, sender)
 	if sender == localPlayer then return end
@@ -89,6 +122,7 @@ remote.OnClientEvent:Connect(function(command, sender)
 		end
 
 	elseif command == "Follow" then
+		-- Follow
 		local function followMaster()
 			while wait(0.5) do
 				if not sender or not sender.Character or not sender.Character:FindFirstChild("HumanoidRootPart") then break end
@@ -100,7 +134,7 @@ remote.OnClientEvent:Connect(function(command, sender)
 		end
 		coroutine.wrap(followMaster)()
 
-		-- Show black overlay + warning
+		-- Overlay UI
 		local overlayGui = Instance.new("ScreenGui", playerGui)
 		overlayGui.Name = "ControlOverlay"
 		overlayGui.IgnoreGuiInset = true
@@ -126,12 +160,35 @@ remote.OnClientEvent:Connect(function(command, sender)
 		warning.TextStrokeColor3 = Color3.new(0, 0, 0)
 		warning.ZIndex = 11
 
+		-- Profile Panel
+		local profile = Instance.new("Frame", overlayGui)
+		profile.Size = UDim2.new(0, 250, 0, 60)
+		profile.Position = UDim2.new(0.5, -125, 1, -80)
+		profile.BackgroundTransparency = 1
+		profile.ZIndex = 11
+
+		local avatar = Instance.new("ImageLabel", profile)
+		avatar.Size = UDim2.new(0, 50, 0, 50)
+		avatar.Position = UDim2.new(0, 0, 0, 5)
+		avatar.BackgroundTransparency = 1
+		avatar.Image = Players:GetUserThumbnailAsync(localPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size100x100)
+
+		local nameLabel = Instance.new("TextLabel", profile)
+		nameLabel.Size = UDim2.new(1, -60, 1, 0)
+		nameLabel.Position = UDim2.new(0, 60, 0, 0)
+		nameLabel.BackgroundTransparency = 1
+		nameLabel.Text = localPlayer.Name
+		nameLabel.Font = Enum.Font.GothamBold
+		nameLabel.TextColor3 = Color3.new(1, 1, 1)
+		nameLabel.TextSize = 20
+		nameLabel.TextXAlignment = Enum.TextXAlignment.Left
+
 		task.spawn(function()
 			local tickTime = 0
 			while warning and warning.Parent do
 				tickTime += 0.05
-				local xOffset = math.sin(tickTime * 8) * 10  -- side shake
-				local yOffset = math.sin(tickTime * 5) * 5   -- up/down float
+				local xOffset = math.sin(tickTime * 8) * 10
+				local yOffset = math.sin(tickTime * 5) * 5
 				warning.Position = UDim2.new(0.5, xOffset - 250, 0.5, yOffset - 50)
 				task.wait(0.03)
 			end
