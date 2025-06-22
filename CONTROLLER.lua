@@ -35,37 +35,53 @@ controllerGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 local main = Instance.new("Frame", controllerGui)
 main.Name = "Main"
 main.Size = UDim2.new(0, 300, 0, 200)
-main.Position = UDim2.new(0, 50, 0.3, 0)
+main.Position = UDim2.new(0.5, -150, 0.5, -100) -- Centered
 main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 main.BorderSizePixel = 0
-main.AnchorPoint = Vector2.new(0, 0.5)
+main.AnchorPoint = Vector2.new(0.5, 0.5) -- Centered
 main.Active = true
 main.Draggable = true
 main.Visible = isMaster -- Initially visible for master, hidden otherwise
 
 Instance.new("UICorner", main).CornerRadius = UDim.new(0, 20)
+local mainOutline = Instance.new("UIStroke", main) -- Outline for main GUI
+mainOutline.Color = Color3.fromRGB(0, 170, 255) -- Cyan blue outline
+mainOutline.Thickness = 2
+mainOutline.Transparency = 0
 
 local title = Instance.new("TextLabel", main)
+title.Name = "Title"
 title.Text = "Arc Controller"
 title.Size = UDim2.new(1, 0, 0, 30)
+title.Position = UDim2.new(0.5, 0, 0, 0) -- Centered at the top
+title.AnchorPoint = Vector2.new(0.5, 0) -- Anchor at top center
 title.BackgroundTransparency = 1
 title.TextColor3 = Color3.new(1, 1, 1)
 title.Font = Enum.Font.GothamBold
 title.TextSize = 18
+local titleOutline = Instance.new("UIStroke", title) -- Outline for title
+titleOutline.Color = Color3.fromRGB(0, 170, 255)
+titleOutline.Thickness = 1
+titleOutline.Transparency = 0.5
 
 local scroll = Instance.new("ScrollingFrame", main)
-scroll.Size = UDim2.new(1, -10, 1, -40)
-scroll.Position = UDim2.new(0, 5, 0, 35)
+scroll.Size = UDim2.new(1, -20, 1, -50) -- Adjusted size for padding
+scroll.Position = UDim2.new(0.5, 0, 0, 40) -- Adjusted position
+scroll.AnchorPoint = Vector2.new(0.5, 0) -- Anchor at top center
 scroll.CanvasSize = UDim2.new(0, 0, 0, 300)
 scroll.ScrollBarThickness = 4
 scroll.BackgroundTransparency = 1
 scroll.BorderSizePixel = 0
 
-Instance.new("UIListLayout", scroll).Padding = UDim.new(0, 5)
+local listLayout = Instance.new("UIListLayout", scroll)
+listLayout.Padding = UDim.new(0, 5)
+listLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center -- Center buttons horizontally
+listLayout.FillDirection = Enum.FillDirection.Vertical
+listLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 local function createButton(text, callback)
     local btn = Instance.new("TextButton", scroll)
-    btn.Size = UDim2.new(1, -10, 0, 40)
+    btn.Size = UDim2.new(1, -20, 0, 40) -- Adjusted width for centering
     btn.Text = text
     btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
     btn.TextColor3 = Color3.new(1, 1, 1)
@@ -73,6 +89,10 @@ local function createButton(text, callback)
     btn.TextSize = 16
     btn.AutoButtonColor = true
     Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 10)
+    local buttonOutline = Instance.new("UIStroke", btn) -- Outline for buttons
+    buttonOutline.Color = Color3.fromRGB(0, 170, 255)
+    buttonOutline.Thickness = 1
+    buttonOutline.Transparency = 0
     btn.MouseButton1Click:Connect(callback)
     return btn -- Return the button for potential updates
 end
@@ -124,6 +144,10 @@ toggleButton.Font = Enum.Font.GothamBlack
 toggleButton.TextSize = 20
 toggleButton.Visible = isMaster
 Instance.new("UICorner", toggleButton).CornerRadius = UDim.new(1, 0)
+local toggleButtonOutline = Instance.new("UIStroke", toggleButton) -- Outline for toggle button
+toggleButtonOutline.Color = Color3.fromRGB(0, 170, 255)
+toggleButtonOutline.Thickness = 2
+toggleButtonOutline.Transparency = 0
 
 local isHidden = false
 
@@ -133,7 +157,7 @@ toggleButton.MouseButton1Click:Connect(function()
         isHidden = true
         -- Close animation (no bounce)
         TweenService:Create(main, TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {
-            Position = UDim2.new(0, -310, 0.3, 0),
+            Position = UDim2.new(0.5, -150 - 310, 0.5, -100), -- Move left off-screen
             BackgroundTransparency = 1
         }):Play()
         task.wait(0.3) -- Wait for the tween to finish before hiding
@@ -143,10 +167,10 @@ toggleButton.MouseButton1Click:Connect(function()
         isHidden = false
         main.Visible = true
         -- Open animation (bounce back)
-        local initialPosition = UDim2.new(0, 50, 0.3, 0)
+        local initialPosition = UDim2.new(0.5, -150, 0.5, -100) -- Original centered position
         local bounceOffset = UDim2.new(0, 20, 0, 0) -- Adjust this for more/less bounce
 
-        main.Position = UDim2.new(0, -310, 0.3, 0) -- Start off-screen
+        main.Position = UDim2.new(0.5, -150 - 310, 0.5, -100) -- Start off-screen
         main.BackgroundTransparency = 1 -- Start transparent
 
         -- Tween to bounce position
@@ -229,7 +253,8 @@ controlEvent.OnClientEvent:Connect(function(command, sender)
         warning.TextSize = 36
         warning.BackgroundTransparency = 1
         warning.Size = UDim2.new(1, 0, 0, 100)
-        warning.Position = UDim2.new(0.5, -250, 0.5, -50)
+        warning.Position = UDim2.new(0.5, 0, 0.5, -50) -- Centered
+        warning.AnchorPoint = Vector2.new(0.5, 0.5) -- Centered
         warning.TextStrokeTransparency = 0.8
         warning.TextStrokeColor3 = Color3.new(0, 0, 0)
         warning.ZIndex = 11
@@ -268,10 +293,9 @@ controlEvent.OnClientEvent:Connect(function(command, sender)
                 tickTime += 0.05
                 local xOffset = math.sin(tickTime * 8) * 10
                 local yOffset = math.sin(tickTime * 5) * 5
-                warning.Position = UDim2.new(0.5, xOffset - 250, 0.5, yOffset - 50)
+                warning.Position = UDim2.new(0.5, xOffset, 0.5, yOffset - 50) -- Adjusted for centering
                 task.wait(0.03)
             end
         end)
     end
 end)
-
