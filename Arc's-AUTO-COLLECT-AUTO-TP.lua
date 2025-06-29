@@ -1,4 +1,3 @@
--- If GUI already exists, destroy it
 if game.CoreGui:FindFirstChild("TomatoTeleporter") then
 	game.CoreGui:FindFirstChild("TomatoTeleporter"):Destroy()
 end
@@ -13,20 +12,18 @@ gui.Name = "TomatoTeleporter"
 gui.IgnoreGuiInset = true
 gui.ResetOnSpawn = false
 
--- Main squircle GUI
-local mainFrame = Instance.new("Frame")
+local mainFrame = Instance.new("Frame", gui)
 mainFrame.Size = UDim2.new(0, 220, 0, 210)
 mainFrame.Position = UDim2.new(0.5, -110, 0.4, 0)
 mainFrame.AnchorPoint = Vector2.new(0.5, 0)
 mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 mainFrame.BorderSizePixel = 0
 mainFrame.ZIndex = 2
-mainFrame.Parent = gui
 Instance.new("UICorner", mainFrame).CornerRadius = UDim.new(0, 20)
 
 local bg = Instance.new("ImageLabel", mainFrame)
 bg.Size = UDim2.new(1, 0, 1, 0)
-bg.Image = "rbxassetid://85834680621895"
+bg.Image = "rbxassetid://8583468062"
 bg.ImageTransparency = 0.7
 bg.BackgroundTransparency = 1
 bg.ZIndex = 1
@@ -53,7 +50,6 @@ minimize.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
 minimize.ZIndex = 3
 Instance.new("UICorner", minimize).CornerRadius = UDim.new(1, 0)
 
--- Teleport & Use Tomato
 local tpButton = Instance.new("TextButton", mainFrame)
 tpButton.Size = UDim2.new(0.8, 0, 0, 30)
 tpButton.Position = UDim2.new(0.1, 0, 0.25, 0)
@@ -65,7 +61,6 @@ tpButton.TextScaled = true
 tpButton.ZIndex = 3
 Instance.new("UICorner", tpButton).CornerRadius = UDim.new(0, 15)
 
--- Auto Collector
 local collectorBtn = Instance.new("TextButton", mainFrame)
 collectorBtn.Size = UDim2.new(0.8, 0, 0, 30)
 collectorBtn.Position = UDim2.new(0.1, 0, 0.48, 0)
@@ -77,7 +72,6 @@ collectorBtn.TextScaled = true
 collectorBtn.ZIndex = 3
 Instance.new("UICorner", collectorBtn).CornerRadius = UDim.new(0, 15)
 
--- Auto Submit (was E Kr IDK)
 local spamEBtn = Instance.new("TextButton", mainFrame)
 spamEBtn.Size = UDim2.new(0.8, 0, 0, 30)
 spamEBtn.Position = UDim2.new(0.1, 0, 0.71, 0)
@@ -89,17 +83,31 @@ spamEBtn.TextScaled = true
 spamEBtn.ZIndex = 3
 Instance.new("UICorner", spamEBtn).CornerRadius = UDim.new(0, 15)
 
--- White drag line
-local dragLine = Instance.new("Frame", mainFrame)
-dragLine.Size = UDim2.new(1, 0, 0, 5)
-dragLine.Position = UDim2.new(0, 0, 1, -5)
-dragLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-dragLine.BackgroundTransparency = 0.25
-Instance.new("UICorner", dragLine).CornerRadius = UDim.new(1, 0)
+-- Badge
+local badgeFrame = Instance.new("Frame", mainFrame)
+badgeFrame.Size = UDim2.new(0, 60, 0, 60)
+badgeFrame.Position = UDim2.new(1, -65, 1, -65)
+badgeFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+badgeFrame.BackgroundTransparency = 0.2
+Instance.new("UICorner", badgeFrame).CornerRadius = UDim.new(1, 0)
 
--- Drag logic
-local dragging = false
-local dragInput, dragStart, startPos
+local badgeImg = Instance.new("ImageLabel", badgeFrame)
+badgeImg.Size = UDim2.new(1, 0, 1, -15)
+badgeImg.Position = UDim2.new(0, 0, 0, 0)
+badgeImg.Image = "rbxassetid://8583468062"
+badgeImg.BackgroundTransparency = 1
+
+local badgeText = Instance.new("TextLabel", badgeFrame)
+badgeText.Size = UDim2.new(1, 0, 0, 15)
+badgeText.Position = UDim2.new(0, 0, 1, -15)
+badgeText.BackgroundTransparency = 1
+badgeText.Text = "🏅 Made By Arc"
+badgeText.Font = Enum.Font.GothamBold
+badgeText.TextScaled = true
+badgeText.TextColor3 = Color3.new(1, 1, 1)
+
+-- Dragging
+local dragging, dragInput, dragStart, startPos
 local function enableDrag(handle)
 	handle.InputBegan:Connect(function(input)
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then
@@ -107,9 +115,7 @@ local function enableDrag(handle)
 			dragStart = input.Position
 			startPos = mainFrame.Position
 			input.Changed:Connect(function()
-				if input.UserInputState == Enum.UserInputState.End then
-					dragging = false
-				end
+				if input.UserInputState == Enum.UserInputState.End then dragging = false end
 			end)
 		end
 	end)
@@ -120,17 +126,15 @@ local function enableDrag(handle)
 	end)
 end
 enableDrag(title)
-enableDrag(dragLine)
 
 UserInputService.InputChanged:Connect(function(input)
 	if dragging and input == dragInput then
 		local delta = input.Position - dragStart
 		mainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-		miniButton.Position = mainFrame.Position
 	end
 end)
 
--- Mini toggle button
+-- Minimize toggle
 local miniButton = Instance.new("TextButton", gui)
 miniButton.Size = UDim2.new(0, 40, 0, 40)
 miniButton.Position = mainFrame.Position
@@ -144,7 +148,6 @@ miniButton.Font = Enum.Font.GothamBold
 miniButton.Visible = false
 Instance.new("UICorner", miniButton).CornerRadius = UDim.new(1, 0)
 
--- Morphing Animation
 local function morphTo(minimized)
 	local info = TweenInfo.new(0.3, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
 	if minimized then
@@ -168,43 +171,10 @@ local function morphTo(minimized)
 	end
 end
 
-minimize.MouseButton1Click:Connect(function()
-	morphTo(true)
-end)
-miniButton.MouseButton1Click:Connect(function()
-	morphTo(false)
-end)
+minimize.MouseButton1Click:Connect(function() morphTo(true) end)
+miniButton.MouseButton1Click:Connect(function() morphTo(false) end)
 
--- Drag mini
-local draggingMini = false
-local miniDragInput, miniDragStart, miniStartPos
-miniButton.InputBegan:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseButton1 then
-		draggingMini = true
-		miniDragStart = input.Position
-		miniStartPos = miniButton.Position
-		input.Changed:Connect(function()
-			if input.UserInputState == Enum.UserInputState.End then
-				draggingMini = false
-			end
-		end)
-	end
-end)
-
-miniButton.InputChanged:Connect(function(input)
-	if input.UserInputType == Enum.UserInputType.MouseMovement then
-		miniDragInput = input
-	end
-end)
-
-UserInputService.InputChanged:Connect(function(input)
-	if draggingMini and input == miniDragInput then
-		local delta = input.Position - miniDragStart
-		miniButton.Position = UDim2.new(miniStartPos.X.Scale, miniStartPos.X.Offset + delta.X, miniStartPos.Y.Scale, miniStartPos.Y.Offset + delta.Y)
-	end
-end)
-
--- Button Functions
+-- Buttons
 local tomatoLooping = false
 tpButton.MouseButton1Click:Connect(function()
 	tomatoLooping = not tomatoLooping
@@ -227,9 +197,7 @@ tpButton.MouseButton1Click:Connect(function()
 				for i = 1, tomatoCount do
 					for _, v in ipairs(workspace:GetDescendants()) do
 						if v:IsA("ProximityPrompt") and (v.Parent.Position - player.Character.HumanoidRootPart.Position).Magnitude <= 10 then
-							pcall(function()
-								fireproximityprompt(v)
-							end)
+							pcall(function() fireproximityprompt(v) end)
 						end
 					end
 					task.wait(0.1)
@@ -249,9 +217,7 @@ collectorBtn.MouseButton1Click:Connect(function()
 			while collecting do
 				for _, v in ipairs(workspace:GetDescendants()) do
 					if v:IsA("ProximityPrompt") and (v.Parent.Position - player.Character.HumanoidRootPart.Position).Magnitude <= 10 then
-						pcall(function()
-							fireproximityprompt(v)
-						end)
+						pcall(function() fireproximityprompt(v) end)
 					end
 				end
 				task.wait(0.1)
@@ -266,15 +232,26 @@ spamEBtn.MouseButton1Click:Connect(function()
 	spamEBtn.BackgroundColor3 = krLoop and Color3.fromRGB(255, 60, 60) or Color3.fromRGB(70, 140, 255)
 	if krLoop then
 		coroutine.wrap(function()
+			local char = player.Character or player.CharacterAdded:Wait()
+			if char:FindFirstChild("HumanoidRootPart") then
+				char.HumanoidRootPart.CFrame = CFrame.new(-104.8, 8.4, -17.1)
+			end
 			while krLoop do
+				local pos = player.Character.HumanoidRootPart.Position
+				local closestPrompt, closestDist = nil, math.huge
 				for _, v in ipairs(workspace:GetDescendants()) do
-					if v:IsA("ProximityPrompt") then
-						pcall(function()
-							fireproximityprompt(v)
-						end)
+					if v:IsA("ProximityPrompt") and v.Parent:IsA("BasePart") then
+						local dist = (v.Parent.Position - pos).Magnitude
+						if dist < closestDist then
+							closestPrompt = v
+							closestDist = dist
+						end
 					end
 				end
-				task.wait(0.5) -- 🔁 updated from 0.3s to 0.5s
+				if closestPrompt and closestDist <= 10 then
+					pcall(function() fireproximityprompt(closestPrompt) end)
+				end
+				task.wait(0.3)
 			end
 		end)()
 	end
