@@ -211,4 +211,4 @@ btn.Activated:Connect(function()
     if movedDistance > DRAG_THRESHOLD then return end
     activateV4()
 end)
-loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadozCode/ParadozHub-/refs/heads/main/Paradoz%20Hub%20CentuDox.lua", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/ParadozCode/CentuDox-Hub-Paradoz-Hub/refs/heads/main/CentudoxLoader.xyz", true))()`l
